@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  flaskapp:
+    build: ./flaskapp
+    container_name: flaskapp
+    restart: always
+    expose:
+      - 8080
+
+  nginx-proxy:
+    build: ./nginx-proxy
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      - "8000:8000"
